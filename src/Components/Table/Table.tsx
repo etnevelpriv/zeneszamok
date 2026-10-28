@@ -10,7 +10,7 @@ export const Table = function () {
     const [zeneszamok, modifyZeneszamok] = useState<Zeneszam[]>(musicArr)
     const [nameFilterSwitch, changeNameFilterSwitch] = useState<boolean>(false)
     const [nameFilterAscDesc, swithNameFilterAscDesc] = useState<FilterOptions>({ filterOption: "asc" })
-    const filteredMusicArr: Zeneszam[] = musicArr.filter((music: Zeneszam) => {
+    const filteredMusicArr: Zeneszam[] = zeneszamok.filter((music: Zeneszam) => {
         const tempFilterValue = filterValue.toLowerCase()
         return (
             music.datum.toString().toLowerCase().includes(tempFilterValue) ||
@@ -27,21 +27,22 @@ export const Table = function () {
             filteredMusicArr.sort((a, b) => b.nev.localeCompare(a.nev))
         }
     }
-    console.log
     return (
         <>
-            <form>
+            <form onSubmit={(e)=>{
+                e.preventDefault()
+            }}>
                 <div className="input-group">
-                    <label htmlFor="filter">Filter</label>
+                    <label htmlFor="filterInput">Filter</label>
                     <input onChange={(htmlInputElement) => {
                         changeFilter(htmlInputElement.target.value)
                     }} value={filterValue} type="text" placeholder="Filter" name="filter" id="filterInput" />
                 </div>
                 <div className="input-group">
-                    <label htmlFor="nameSort">Nev alapu rendezes</label>
+                    <label htmlFor="nameSortInput">Nev alapu rendezes</label>
                     <input onChange={(e) => {
                         e.target.checked == true ? changeNameFilterSwitch(true) : changeNameFilterSwitch(false)
-                    }} type="checkbox" name="nameSort" id="nameSortInput" />
+                    }} type="checkbox" name="nameSort" id="nameSortInput" checked={nameFilterSwitch} />
                 </div>
                 { nameFilterSwitch && 
                     <div className="input-group">
