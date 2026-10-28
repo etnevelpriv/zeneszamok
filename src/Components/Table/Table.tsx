@@ -1,9 +1,9 @@
 import { useState } from "react"
 import type { Zeneszam } from "../../Models/Interfaces/Zeneszam.interface"
-import { readFile } from "../../Helper_Scripts/CRUD_json"
+import { readData } from "../../Helper_Scripts/CRUD_json"
 import type { FilterOptions } from "../../Models/Interfaces/FilterOptions.interface";
 
-const musicArr: Zeneszam[] = await readFile("zeneszamok");
+const musicArr: Zeneszam[] = await readData("zeneszamok");
 
 export const Table = function () {
     const [filterValue, changeFilter] = useState<string>("")

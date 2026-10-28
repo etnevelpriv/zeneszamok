@@ -1,21 +1,16 @@
 import { useState } from "react";
 import { Zeneszam_Class } from "../../Models/Classes/Zeneszam_Class.class";
+import { showErrorModal, showSuccessModal } from "../../Helper_Scripts/Modal_Handles";
+import { createData } from "../../Helper_Scripts/CRUD_json";
 
 export const InputForm = function () {
     const [musicName, changeMusicName] = useState<string>("");
     const [musicDate, changeMusicDate] = useState<Date>(new Date())
     const [musicMusician, changeMusician] = useState<string>("")
     const [musicHungarian, changeMusicHungarian] = useState<boolean>(false)
-    const [musicSalesNumber, changeMusicSalesNumber] = useState<number>()
+    const [musicSalesNumber, changeMusicSalesNumber] = useState<number>(0)
     return (
         <>
-            <ul>
-                <li>{musicName}</li>
-                <li>{musicDate.toString()}</li>
-                <li>{musicMusician}</li>
-                <li>{musicHungarian ? "igen" : "nem"}</li>
-                <li>{musicSalesNumber}</li>
-            </ul>
             <form className="postMusicForm">
                 <div className="input-group">
                     <label htmlFor="nameInput">Nev</label>
@@ -52,11 +47,14 @@ export const InputForm = function () {
                         changeMusicSalesNumber(Number(e.target.value))
                     }} type="number" name="salesNumber" id="salesNumberInput" value={musicSalesNumber} />
                 </div>
-                <input type="button" value="Mentes" onClick={() => {
+                <input type="button" value="Mentes" onClick={async () => {
                     try {
                         const music = new Zeneszam_Class(musicName, musicDate, musicMusician, Number(musicSalesNumber), musicHungarian)
+                        await createData("zeneszamok", music);
+                        showSuccessModal("Sikeres zeneszam hozzaadas", "A zeneszam hozzaadas sikeres volt")
                     } catch (err: Error | any) {
-                        console.log(`HIBAUZENET: ${err.message}`)
+                        showErrorModal(err.message, "Sikertelen zeneszam hozzaadas")
+                        console.error(`HIBAUZENET: ${err.message}`)
                     }
                 }} />
             </form>
