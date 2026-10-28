@@ -1,0 +1,37 @@
+[
+    {
+        "nev": "Shape of You",
+        "datum": "2017-01-06",
+        "eloado": "Ed Sheeran",
+        "magyar": false,
+        "eladasok_szama": 42000000
+    },
+    {
+        "nev": "Blinding Lights",
+        "datum": "2019-11-29",
+        "eloado": "The Weeknd",
+        "magyar": false,
+        "eladasok_szama": 35000000
+    },
+    {
+        "nev": "Tavaszi szél",
+        "datum": "1977-01-01",
+        "eloado": "Omega",
+        "magyar": true,
+        "eladasok_szama": 1200000
+    },
+    {
+        "nev": "Az éjjel soha nem érhet véget",
+        "datum": "2016-05-01",
+        "eloado": "Rúzsa Magdi",
+        "magyar": true,
+        "eladasok_szama": 850000
+    },
+    {
+        "nev": "Bohemian Rhapsody",
+        "datum": "1975-10-31",
+        "eloado": "Queen",
+        "magyar": false,
+        "eladasok_szama": 60000000
+    }
+]
