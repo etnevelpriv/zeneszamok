@@ -1,0 +1,15 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: antiquewhite;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+@media (mint-width:800px) {
+  #root {
+    max-width: 80%;
+  }
+}

@@ -29,7 +29,7 @@ export const Table = function () {
     }
     return (
         <>
-            <form onSubmit={(e)=>{
+            <form className="filterForm" onSubmit={(e)=>{
                 e.preventDefault()
             }}>
                 <div className="input-group">
@@ -57,7 +57,7 @@ export const Table = function () {
                     </div>
                 }
             </form>
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>ID.</th>

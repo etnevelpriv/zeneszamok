@@ -1,3 +1,4 @@
+import "./Modal.css"
 export const Modal = function () {
     return (
         <>
