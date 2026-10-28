@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Zeneszam_Class } from "../../Models/Classes/Zeneszam_Class.class";
 import { showErrorModal, showSuccessModal } from "../../Helper_Scripts/Modal_Handles";
 import { createData } from "../../Helper_Scripts/CRUD_json";
+import "./InputForm.css";
 
 export const InputForm = function () {
     const [musicName, changeMusicName] = useState<string>("");

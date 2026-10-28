@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Zeneszam } from "../../Models/Interfaces/Zeneszam.interface"
 import { readData } from "../../Helper_Scripts/CRUD_json"
 import type { FilterOptions } from "../../Models/Interfaces/FilterOptions.interface";
+import "./Table.css";
 
 const musicArr: Zeneszam[] = await readData("zeneszamok");
 

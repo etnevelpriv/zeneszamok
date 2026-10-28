@@ -1,0 +1,22 @@
+.filterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    .input-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .input-group:has(input[type=radio]), .input-group:has(input[type=checkbox]) {
+        text-align: start;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+.table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}

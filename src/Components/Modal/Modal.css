@@ -1,3 +1,25 @@
+.modal {
+    z-index: 1001;
+    display: block;
+    height: fit-content;
+    width: 400px;
+    background-color: aliceblue;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.success {
+    background-color: rgb(138, 232, 114);
+}
+
+.error {
+    background-color: rgb(232, 114, 114);
+}
+
 .hidden {
     display: none;
 }
